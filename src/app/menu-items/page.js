@@ -34,8 +34,8 @@ export default function MenuItemsPage() {
         <Link
           className="button flex"
           href={'/menu-items/new'}>
-          <span>Crete new menu item</span>
-          <Right />
+          <span>Create new menu item</span>
+          <Right/>
         </Link>
       </div>
       <div>
@@ -52,7 +52,7 @@ export default function MenuItemsPage() {
                   className="rounded-md"
                   src={item.image} alt={''} width={200} height={200} />
               </div>
-              <div className="text-center">
+              <div className="text-center font-bold">
                 {item.name}
               </div>
             </Link>

@@ -44,7 +44,7 @@ export default function UserForm({user,onSave}) {
         </label>
         <input
           type="text" placeholder="First and last name"
-          value={userName} onChange={ev => setUserName(ev.target.value)}
+          value={userName} onChange={ev => setUserName(ev.target.value)}required
         />
         <label>Email</label>
         <input
@@ -52,23 +52,13 @@ export default function UserForm({user,onSave}) {
           disabled={true}
           value={user.email}
           placeholder={'email'}
+          required
         />
         <AddressInputs
           addressProps={{phone, streetAddress, postalCode, city, country}}
           setAddressProp={handleAddressChange}
         />
-        {loggedInUserData.admin && (
-          <div>
-            <label className="p-2 inline-flex items-center gap-2 mb-2" htmlFor="adminCb">
-              <input
-                id="adminCb" type="checkbox" className="" value={'1'}
-                checked={admin}
-                onChange={ev => setAdmin(ev.target.checked)}
-              />
-              <span>Admin</span>
-            </label>
-          </div>
-        )}
+
         <button type="submit">Save</button>
       </form>
     </div>

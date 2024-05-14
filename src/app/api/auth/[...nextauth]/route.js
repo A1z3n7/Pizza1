@@ -35,7 +35,7 @@ export const authOptions = {
           return user;
         }
 
-        return null
+        return null;
       }
     })
   ],
@@ -57,3 +57,4 @@ export async function isAdmin() {
 const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST }
+

@@ -10,7 +10,7 @@ function AuthLinks({status, userName}) {
   if (status === 'authenticated') {
     return (
       <>
-        <Link href={'/profile'} className="whitespace-nowrap">
+        <Link href={'/profile'} className="whitespace-nowrap hover:underline">
           Hello, {userName}
         </Link>
         <button
@@ -44,10 +44,10 @@ export default function Header() {
     userName = userName.split(' ')[0];
   }
   return (
-    <header>
-      <div className="flex items-center md:hidden justify-between">
+    <header className="mb-6">
+      <div className="flex items-center md:hidden justify-between ">
         <Link className="text-primary font-semibold text-2xl" href={'/'}>
-          ST PIZZA
+        <span className="text-black">gigis</span> pizza
         </Link>
         <div className="flex gap-8 items-center">
           <Link href={'/cart'} className="relative">
@@ -79,7 +79,7 @@ export default function Header() {
       <div className="hidden md:flex items-center justify-between">
         <nav className="flex items-center gap-8 text-gray-500 font-semibold">
           <Link className="text-primary font-semibold text-2xl" href={'/'}>
-            ST PIZZA
+          <span className="text-black">gigis</span> pizza
           </Link>
           <Link href={'/'}>Home</Link>
           <Link href={'/menu'}>Menu</Link>

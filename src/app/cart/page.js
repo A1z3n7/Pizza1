@@ -46,7 +46,6 @@ export default function CartPage() {
   async function proceedToCheckout(ev) {
     ev.preventDefault();
     // address and shopping cart products
-
     const promise = new Promise((resolve, reject) => {
       fetch('/api/checkout', {
         method: 'POST',
@@ -76,7 +75,7 @@ export default function CartPage() {
     return (
       <section className="mt-8 text-center">
         <SectionHeaders mainHeader="Cart" />
-        <p className="mt-4">Your shopping cart is empty 😔</p>
+        <p className="mt-4">Your shopping cart is empty.</p>
       </section>
     );
   }
@@ -91,13 +90,15 @@ export default function CartPage() {
           {cartProducts?.length === 0 && (
             <div>No products in your shopping cart</div>
           )}
-          {cartProducts?.length > 0 && cartProducts.map((product, index) => (
-            <CartProduct
-              key={index}
-              product={product}
-              onRemove={removeCartProduct}
+         {cartProducts?.length > 0 && cartProducts.map((product, index) => (
+          <CartProduct
+            key={index}
+            product={product}
+            index={index} // Pass the index as a prop
+            onRemove={() => removeCartProduct(index)} // Pass the removal function
             />
-          ))}
+))}
+
           <div className="py-2 pr-16 flex justify-end items-center">
             <div className="text-gray-500">
               Subtotal:<br />
@@ -105,9 +106,9 @@ export default function CartPage() {
               Total:
             </div>
             <div className="font-semibold pl-2 text-right">
-              ${subtotal}<br />
-              $5<br />
-              ${subtotal + 5}
+            ₹{subtotal}<br />
+            ₹40<br />
+            ₹{subtotal + 40}
             </div>
           </div>
         </div>
@@ -118,7 +119,7 @@ export default function CartPage() {
               addressProps={address}
               setAddressProp={handleAddressChange}
             />
-            <button type="submit">Pay ${subtotal+5}</button>
+            <button type="submit">Pay ₹{subtotal+40}</button>
           </form>
         </div>
       </div>

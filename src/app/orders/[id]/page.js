@@ -41,7 +41,7 @@ export default function OrderPage() {
         <SectionHeaders mainHeader="Your order" />
         <div className="mt-4 mb-8">
           <p>Thanks for your order.</p>
-          <p>We will call you when your order will be on the way.</p>
+          <p>Rest assured, well keep you informed every step of the way.</p>
         </div>
       </div>
       {loadingOrder && (
@@ -55,14 +55,14 @@ export default function OrderPage() {
             ))}
             <div className="text-right py-2 text-gray-500">
               Subtotal:
-              <span className="text-black font-bold inline-block w-8">${subtotal}</span>
+              <span className="text-black font-bold inline-block w-8">₹{subtotal}</span>
               <br />
               Delivery:
-              <span className="text-black font-bold inline-block w-8">$5</span>
+              <span className="text-black font-bold inline-block w-8">₹40</span>
               <br />
               Total:
               <span className="text-black font-bold inline-block w-8">
-                ${subtotal + 5}
+              ₹{subtotal + 40}
               </span>
             </div>
           </div>

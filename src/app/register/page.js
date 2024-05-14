@@ -42,8 +42,8 @@ export default function RegisterPage() {
       )}
       {error && (
         <div className="my-4 text-center">
-          An error has occurred.<br />
-          Please try again later
+          .<br />
+          
         </div>
       )}
       <form className="block max-w-xs mx-auto" onSubmit={handleFormSubmit}>

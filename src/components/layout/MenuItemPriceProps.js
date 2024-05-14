@@ -10,7 +10,7 @@ export default function MenuItemPriceProps({name,addLabel,props,setProps}) {
 
   function addProp() {
     setProps(oldProps => {
-      return [...oldProps, {name:'', price:0}];
+      return [...oldProps, {name:'', price:''}];
     });
   }
 

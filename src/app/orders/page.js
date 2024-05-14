@@ -39,10 +39,10 @@ export default function OrdersPage() {
             <div className="grow flex flex-col md:flex-row items-center gap-6">
               <div>
                 <div className={
-                  (order.paid ? 'bg-green-500' : 'bg-red-400')
+                  (order.paid ? 'bg-red-500' : 'bg-green-400')
                   + ' p-2 rounded-md text-white w-24 text-center'
                 }>
-                  {order.paid ? 'Paid' : 'Not paid'}
+                  {order.paid ? 'Not Paid' : 'Paid'}
                 </div>
               </div>
               <div className="grow">
